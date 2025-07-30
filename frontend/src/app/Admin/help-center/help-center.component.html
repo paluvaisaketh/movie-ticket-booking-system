@@ -1,0 +1,63 @@
+<div class="flex h-screen">
+  <div class="w-64 bg-white shadow-lg">
+    <app-side-navbar></app-side-navbar>
+  </div>
+
+  <div class="ml-9 flex flex-col min-h-screen w-full">
+    <app-admin-header></app-admin-header>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <main class="flex-1 overflow-y-auto p-6 bg-gray-50">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h1 class="text-2xl font-bold text-gray-800 mb-6">Admin Help Center</h1>
+          <p class="text-gray-600 mb-8">
+            This guide provides a detailed overview of the core functionalities available in your admin panel and how to perform them.
+          </p>
+
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">1. Dashboard</h2>
+            <p class="text-gray-700">
+              The dashboard is your central hub for monitoring key business metrics. It provides a real-time, read-only view of key performance indicators (KPIs) like total active movies, today's bookings, and total revenue. It also features charts that help you track trends over time. As an admin, you have access to sensitive data for a complete overview of the platform's performance.
+            </p>
+          </div>
+
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">2. Movies Management</h2>
+            <p class="text-gray-700">
+              This section allows you to manage the movie catalog. You can perform full CRUD (Create, Read, Update, Delete) operations. This includes adding a new movie with details like title, poster, and synopsis. When a movie is deleted, the system automatically handles cascading deletions of associated shows and seating layouts to maintain data integrity.
+            </p>
+          </div>
+
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">3. Shows Management</h2>
+            <p class="text-gray-700">
+              The shows management component is used to manage showtimes and their associated seats. You can create new shows by specifying a movie, a screen, and a date/time. The system automatically generates a seating layout for the new show based on a default template. Deleting a show also removes its associated seating data.
+            </p>
+          </div>
+          
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">4. Seating Management</h2>
+            <p class="text-gray-700">
+              This is a real-time tool for managing a show's seat layout. You can manually block or unblock seats (e.g., for maintenance or VIP reservations). The system logs every action you take in the database for auditing purposes. This feature is crucial for managing unexpected seating issues.
+            </p>
+          </div>
+
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">5. Reports Management</h2>
+            <p class="text-gray-700">
+              This component provides detailed analytics on bookings, revenue, and user data. You can view booking and revenue trends over custom date ranges, and see breakdowns of data by popular movies, screen utilization, and payment methods. This page is exclusively for administrators and is secured to prevent unauthorized access.
+            </p>
+          </div>
+
+          <div class="mb-8 border-b pb-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">6. Profile Setup</h2>
+            <p class="text-gray-700">
+              The profile setup allows you to view and update your own user details, such as name and email. This is a private, authenticated route that ensures only you can access or modify your personal information.
+            </p>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+<div class="flex h-screen bg-gray-50">
+    <div class="w-64 bg-white shadow-lg">
+        <app-side-navbar></app-side-navbar>
+    </div>
+    
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <header class="bg-white p-4 shadow-sm flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-gray-800">Seat Management</h1>
+            <div *ngIf="theatre" class="text-sm text-gray-600">
+                Theatre: <span class="font-medium text-gray-900">{{ theatre.name }}</span>
+            </div>
+        </header>
+
+        <div class="flex-1 flex overflow-hidden p-6">
+            <div class="w-1/3 bg-white p-6 rounded-lg shadow-md flex-shrink-0 mr-6">
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Show Details</h2>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Select Date</label>
+                        <input 
+                            type="date" 
+                            [(ngModel)]="selectedDate" 
+                            (change)="onDateChange()"
+                            [min]="todayDate"
+                            [max]="tomorrowDate"
+                            class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Select Screen</label>
+                        <select 
+                            [(ngModel)]="selectedScreenId" 
+                            (change)="onScreenChange()"
+                            class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            <option value="">-- Select Screen --</option>
+                            <option *ngFor="let screen of screens" [value]="screen._id">
+                                {{ screen.name }}
+                            </option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Select Show</label>
+                        <select 
+                            [(ngModel)]="selectedShowId" 
+                            (change)="loadSeatsForShow(selectedShowId!)"
+                            class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            [disabled]="!selectedScreenId || filteredShows.length === 0"
+                        >
+                            <option [value]="null">-- No Shows Available --</option>
+                            <option *ngFor="let show of filteredShows" [value]="show._id">
+                                {{ getMovieTitle(show) }} - {{ datePipe.transform(show.show_datetime, 'shortTime') }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t" *ngIf="selectedShowId && showSeatData && !error">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Seat Operations</h2>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-1">
+                            Selected Seats
+                        </label>
+                        <div class="p-2 border border-gray-300 rounded-md bg-gray-100 text-gray-800 text-sm h-12 overflow-y-auto">
+                            {{ getSelectedSeatsDisplay() }}
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-1">
+                            Reason for blocking/unblocking
+                        </label>
+                        <input 
+                            type="text"
+                            [(ngModel)]="operationReason"
+                            placeholder="e.g., Maintenance, VIP hold"
+                            class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                    </div>
+
+                    <div class="flex space-x-2 mt-4">
+                        <button 
+                            (click)="blockSeats()"
+                            [disabled]="selectedSeats.length === 0 || !operationReason || loading"
+                            class="flex-1 py-2 px-4 rounded-md text-white font-medium transition-colors"
+                            [ngClass]="{'bg-red-600 hover:bg-red-700': selectedSeats.length > 0 && operationReason, 'bg-gray-400 cursor-not-allowed': selectedSeats.length === 0 || !operationReason || loading}"
+                        >
+                            Block Seats
+                        </button>
+                        <button 
+                            (click)="unblockSeats()"
+                            [disabled]="selectedSeats.length === 0 || loading"
+                            class="flex-1 py-2 px-4 rounded-md text-white font-medium transition-colors"
+                            [ngClass]="{'bg-green-600 hover:bg-green-700': selectedSeats.length > 0, 'bg-gray-400 cursor-not-allowed': selectedSeats.length === 0 || loading}"
+                        >
+                            Unblock Seats
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/3 flex flex-col items-center p-6 overflow-y-auto bg-white rounded-lg shadow-md">
+                <div *ngIf="!selectedShowId" class="text-center text-gray-500 py-8">
+                    Please select a show to view the seat layout.
+                </div>
+                <div *ngIf="loading && selectedShowId" class="flex justify-center items-center h-full">
+                    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+                </div>
+                <div *ngIf="!loading && !error && showSeatData" class="seat-map-container">
+                    <div class="text-center font-bold text-lg mb-4 ml-6">
+                        <div class="w-full h-10 bg-gray-900 text-white flex items-center justify-center rounded-lg shadow-inner">
+                            Screen
+                        </div>
+                    </div>
+
+                    <div class="seat-grid">
+                        <div 
+                            *ngFor="let row of seatRows" 
+                            class="seat-row"
+                        >
+                            <span class="seat-row-label">{{ row }}</span>
+                            <div class="seat-line">
+                                <div *ngFor="let seat of getSeatsForRow(row)" class="seat-wrapper">
+                                    <div 
+                                        class="seat-box"
+                                        [ngClass]="getSeatClass(seat)"
+                                        (click)="toggleSeatSelection(seat.seat_number)"
+                                        [title]="getSeatTooltip(seat)"
+                                    >
+                                        {{ seat.seat_number.slice(1) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center space-x-6 mt-8 p-4 bg-gray-100 rounded-lg shadow-inner">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-green-500 rounded-sm"></div>
+                            <span class="ml-2 text-sm text-gray-700">Available</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-blue-500 rounded-sm"></div>
+                            <span class="ml-2 text-sm text-gray-700">Premium/VIP</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-yellow-400 rounded-sm"></div>
+                            <span class="ml-2 text-sm text-gray-700">Selected</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-red-400 rounded-sm"></div>
+                            <span class="ml-2 text-sm text-gray-700">Blocked</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-gray-400 rounded-sm"></div>
+                            <span class="ml-2 text-sm text-gray-700">Booked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

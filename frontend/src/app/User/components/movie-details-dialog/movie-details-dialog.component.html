@@ -1,0 +1,60 @@
+<div class="p-6 max-w-2xl">
+  <div class="flex items-start gap-6">
+    <!-- Movie Poster -->
+    <img [src]="data.movie.poster" 
+         [alt]="data.movie.title" 
+         class="w-40 h-56 object-cover rounded-lg shadow-md">
+
+    <!-- Movie Details -->
+    <div class="flex-1">
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ data.movie.title }}</h2>
+      
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">
+          {{ data.movie.rating }}
+        </span>
+        <span class="text-gray-700">{{ data.movie.language }}</span>
+        <span class="text-gray-700">{{ data.movie.duration }}</span>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-gray-800 mb-1">Genres</h3>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let genre of data.movie.genre" 
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+            {{ genre }}
+          </span>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-gray-800 mb-1">Formats</h3>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let format of data.movie.formats" 
+                class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+            {{ format.toUpperCase() }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Synopsis -->
+  <div class="mt-6">
+    <h3 class="font-semibold text-gray-800 mb-2">Synopsis</h3>
+    <p class="text-gray-600">{{ data.movie.synopsis }}</p>
+  </div>
+
+  <!-- Actions -->
+  <div class="mt-8 flex justify-end gap-3">
+    <button mat-button (click)="onClose()" class="text-gray-600 hover:bg-gray-100 px-4 py-2 rounded">
+      Close
+    </button>
+    <button mat-raised-button 
+            color="primary"
+            (click)="onBookNow()"
+            class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded">
+      Book Now
+    </button>
+  </div>
+</div>

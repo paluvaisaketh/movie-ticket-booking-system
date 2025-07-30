@@ -1,0 +1,93 @@
+<app-layout>
+    <section class="bg-gradient-to-r from-green-500 to-green-600 py-12 text-white pb-15 mt-15">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl font-bold mb-3">Exclusive Offers</h1>
+            <p class="text-lg mb-6">Save more on your movie bookings with our amazing deals and discounts!</p>
+            <button class="bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors" routerLink="/movies">
+                🎬 Browse Movies
+            </button>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">All Available Offers</h2>
+        
+        <div *ngIf="isLoading" class="text-center py-8">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-purple-500"></div>
+            <p class="mt-2 text-gray-600">Loading offers...</p>
+        </div>
+
+        <div *ngIf="!isLoading && offers.length === 0" class="text-center py-8">
+            <p class="text-gray-600">No offers available at the moment. Please check back later.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:px-40 gap-6 px-4 sm:px-6">
+            <div *ngFor="let offer of offers" class="bg-white rounded-xl shadow-lg overflow-hidden offer-card">
+                <div class="p-6 relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <div [ngClass]="getOfferIconClass(offer)" class="p-3 rounded-full">
+                            <div [ngClass]="getOfferIconTextClass(offer)" class="text-xl">{{ getOfferIcon(offer) }}</div>
+                        </div>
+                        <span class="text-xs text-gray-500">Save More</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">{{ offer.title }}</h3>
+                    <p class="text-sm text-gray-600 mb-4">{{ getOfferDescription(offer) }}</p>
+                    
+                    <div class="space-y-2 text-xs text-gray-500 mb-4">
+                        <div class="flex justify-between">
+                            <span>Promo Code:</span>
+                            <span class="font-mono">{{ offer.code }}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Valid Until:</span>
+                            <span>{{ formatDate(offer.valid_to) }}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Min Amount:</span>
+                            <span>₹{{ offer.min_amount }}</span>
+                        </div>
+                    </div>
+                    
+                    <button (click)="copyToClipboard(offer.code)" class="w-full bg-gray-900 text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                        Apply Offer →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">How to Use Offers</h2>
+        <p class="text-center text-gray-600 mb-8">Follow these simple steps to apply offers on your bookings</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center step-card">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-green-600">1</span>
+                </div>
+                <h3 class="font-semibold text-gray-800 mb-2">Select Movie</h3>
+                <p class="text-sm text-gray-600">Choose your favorite movie and select showtimes</p>
+            </div>
+            
+            <div class="text-center step-card">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-green-600">2</span>
+                </div>
+                <h3 class="font-semibold text-gray-800 mb-2">Apply Offer</h3>
+                <p class="text-sm text-gray-600">Enter promo code during checkout to get instant discount</p>
+            </div>
+            
+            <div class="text-center step-card">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-green-600">3</span>
+                </div>
+                <h3 class="font-semibold text-gray-800 mb-2">Save Money</h3>
+                <p class="text-sm text-gray-600">Complete payment with discounted price and enjoy the show!</p>
+            </div>
+        </div>
+    </section>
+
+    <div *ngIf="showNotification" class="notification show">
+        {{ notificationMessage }}
+    </div>
+</app-layout>

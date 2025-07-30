@@ -1,0 +1,125 @@
+.payment-method {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.payment-method:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method.selected {
+  border-color: #8b5cf6;
+  background-color: #f5f3ff;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.seat:hover:not(.booked):not(.selected) {
+  transform: scale(1.1);
+}
+
+.available {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+.selected {
+  background-color: #8b5cf6;
+  border-color: #7c3aed;
+  color: white;
+}
+
+.booked {
+  background-color: #6b7280;
+  border-color: #4b5563;
+  color: white;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.booked::before {
+  content: '×';
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.premium {
+  background-color: #fbbf24;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.wheelchair {
+  background-color: #bfdbfe;
+  border-color: #93c5fd;
+  color: #1e40af;
+  font-size: 14px;
+}
+
+.screen-indicator {
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  height: 40px;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+}
+
+.row-label {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+
+
+
+
+
+
+
+/* Add this to your payment.component.css */
+input {
+  color: #000 !important; /* Force black text */
+  background-color: #fff !important; /* Ensure white background */
+}
+
+.payment-method.selected {
+  border-color: #7c3aed; /* Purple border for selected method */
+  background-color: #f5f3ff; /* Light purple background */
+}
+
+/* Ensure proper contrast for all text */
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}

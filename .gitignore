@@ -1,42 +1,26 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
+# Node.js
+node_modules/
 npm-debug.log
-yarn-error.log
+.env
 
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Angular
+/frontend/dist/
+/frontend/node_modules/
+/frontend/.angular/
+/frontend/npm-debug.log*
+/frontend/yarn-error.log*
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Backend
+/backend/node_modules/
+/backend/dist/ # if you compile backend JS
+/backend/npm-debug.log*
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Gateway
+/gateway/node_modules/
+/gateway/npm-debug.log*
 
-# System files
-.DS_Store
-Thumbs.db
+# Docker
+.dockerignore # Don't ignore itself, but related files might be here
+*.log
+*.swp
+.vscode/ # VS Code settings, optional

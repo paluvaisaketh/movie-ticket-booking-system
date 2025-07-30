@@ -1,0 +1,995 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@movieapp.com",
+      "phone": "9999999999",
+      "password": "hashedadminpassword",
+      "role": "admin",
+      "otp": null,
+      "otp_expiry": null,
+      "is_verified": true,
+      "dob": "1980-01-15T00:00:00.000Z",
+      "created_at": "2025-07-01T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Kumar",
+      "email": "rajesh@example.com",
+      "phone": "9876543210",
+      "password": "hasheduserpassword1",
+      "role": "user",
+      "otp": null,
+      "otp_expiry": null,
+      "is_verified": true,
+      "dob": "1980-01-15T00:00:00.000Z",
+      "created_at": "2025-07-02T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Priya Patel",
+      "email": "priya@example.com",
+      "phone": "8765432109",
+      "password": "hasheduserpassword2",
+      "role": "user",
+      "otp": null,
+      "otp_expiry": null,
+      "is_verified": true,
+      "dob": "1980-01-15T00:00:00.000Z",
+      "created_at": "2025-07-03T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Bhargav Saketh",
+      "email": "bhargav@example.com",
+      "phone": "7842814996",
+      "password": "hasheduserpassword3",
+      "role": "user",
+      "otp": null,
+      "otp_expiry": null,
+      "is_verified": true,
+      "dob": "1980-01-15T00:00:00.000Z",
+      "created_at": "2025-07-04T11:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Ananya Sharma",
+      "email": "ananya@example.com",
+      "phone": "9123456789",
+      "password": "hasheduserpassword4",
+      "role": "user",
+      "otp": null,
+      "otp_expiry": null,
+      "is_verified": true,
+      "dob": "1980-01-15T00:00:00.000Z",
+      "created_at": "2025-07-05T12:00:00.000Z"
+    }
+  ],
+  "theatres": [
+    {
+      "id": "T001",
+      "name": "CineStar Grand",
+      "location": "City Center Mall, Coimbatore",
+      "contact": "+91-9876543210",
+      "is_active": true,
+      "created_at": "2025-07-01T08:30:00.000Z"
+    }
+  ],
+  "screens": [
+    {
+      "id": "S001",
+      "theatre_id": "T001",
+      "name": "Screen 1"
+    },
+    {
+      "id": "S002",
+      "theatre_id": "T001",
+      "name": "Screen 2"
+    },
+    {
+      "id": "S003",
+      "theatre_id": "T001",
+      "name": "Screen 3"
+    },
+    {
+      "id": "S004",
+      "theatre_id": "T001",
+      "name": "Screen 4"
+    }
+  ],
+  "movies": [
+    {
+      "id": "M001",
+      "title": "Thug Life",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ04dVQPYwuFlxW8Jn8JfrxECUhbYwSGZonWl8skpDJ3gDnQldlrxW7cRzP97PEsvtlIYvlPlWAYRRpVv3I_oI0SA8yxv3aA5JzQ50UmFMOw",
+      "rating": "U",
+      "language": "Tamil",
+      "duration": "2h 46min",
+      "synopsis": "A father's journey to protect his family from the underworld."
+    },
+    {
+      "id": "M002",
+      "title": "Andala Rakshasi",
+      "poster": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/andala-rakshasi-et00010529-1749449866.jpg",
+      "rating": "U",
+      "language": "Telugu",
+      "duration": "1h 50min",
+      "synopsis": "A romantic thriller with unexpected twists and turns."
+    },
+    {
+      "id": "M003",
+      "title": "Thammudu",
+      "poster": "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ni4xLzEwICAyLjdLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00444632-ghvgumlrff-portrait.jpg",
+      "rating": "U",
+      "language": "Telugu",
+      "duration": "3h 05min",
+      "synopsis": "An action-adventure story of brotherhood and revenge."
+    },
+    {
+      "id": "M004",
+      "title": "Maharshi",
+      "poster": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/maharshi-et00081372-09-08-2018-10-00-31.jpg",
+      "rating": "UA",
+      "language": "Telugu",
+      "duration": "3h 30min",
+      "synopsis": "A successful businessman returns to his roots to help farmers."
+    },
+    {
+      "id": "M005",
+      "title": "Kalki 2898 AD",
+      "poster": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalki-2898-ad-et00371900-1704207908.jpg",
+      "rating": "UA",
+      "language": "Telugu",
+      "duration": "2h 55min",
+      "synopsis": "A dystopian sci-fi epic set in a futuristic world."
+    }
+  ],
+  "movie_genres": [
+    { "movie_id": "M001", "genre": "Action" },
+    { "movie_id": "M001", "genre": "Drama" },
+    { "movie_id": "M002", "genre": "Thriller" },
+    { "movie_id": "M002", "genre": "Romance" },
+    { "movie_id": "M003", "genre": "Action" },
+    { "movie_id": "M003", "genre": "Adventure" },
+    { "movie_id": "M004", "genre": "Drama" },
+    { "movie_id": "M004", "genre": "Social" },
+    { "movie_id": "M005", "genre": "Sci-Fi" },
+    { "movie_id": "M005", "genre": "Fantasy" }
+  ],
+  "movie_formats": [
+    { "movie_id": "M001", "format": "2D" },
+    { "movie_id": "M001", "format": "IMAX" },
+    { "movie_id": "M002", "format": "2D" },
+    { "movie_id": "M003", "format": "2D" },
+    { "movie_id": "M003", "format": "3D" },
+    { "movie_id": "M004", "format": "2D" },
+    { "movie_id": "M005", "format": "2D" },
+    { "movie_id": "M005", "format": "3D" }
+  ],
+  "movie_categories": [
+    { "movie_id": "M001", "category": "recommended" },
+    { "movie_id": "M002", "category": "recent" },
+    { "movie_id": "M003", "category": "recent" },
+    { "movie_id": "M004", "category": "recommended" },
+    { "movie_id": "M005", "category": "upcoming" }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "code": "WELCOME100",
+      "title": "Welcome Offer",
+      "discount_type": "fixed",
+      "discount_value": 100,
+      "min_amount": 300,
+      "max_discount": null,
+      "valid_from": "2025-07-01T00:00:00.000Z",
+      "valid_to": "2025-08-31T23:59:59.000Z",
+      "is_active": true,
+      "created_at": "2025-07-01T08:40:00.000Z"
+    },
+    {
+      "id": 2,
+      "code": "FESTIVE10",
+      "title": "Festival Discount 10%",
+      "discount_type": "percentage",
+      "discount_value": 10,
+      "min_amount": 500,
+      "max_discount": 75,
+      "valid_from": "2025-07-15T00:00:00.000Z",
+      "valid_to": "2025-08-15T23:59:59.000Z",
+      "is_active": true,
+      "created_at": "2025-07-10T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "code": "SUPERWEEKEND",
+      "title": "Weekend Special",
+      "discount_type": "fixed",
+      "discount_value": 50,
+      "min_amount": 200,
+      "max_discount": null,
+      "valid_from": "2025-07-19T00:00:00.000Z",
+      "valid_to": "2025-07-21T23:59:59.000Z",
+      "is_active": true,
+      "created_at": "2025-07-18T14:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "code": "MOVIEBUFF",
+      "title": "Loyalty Discount 5%",
+      "discount_type": "percentage",
+      "discount_value": 5,
+      "min_amount": 1000,
+      "max_discount": 150,
+      "valid_from": "2025-06-01T00:00:00.000Z",
+      "valid_to": "2025-12-31T23:59:59.000Z",
+      "is_active": true,
+      "created_at": "2025-05-20T09:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "code": "STAFFDISC",
+      "title": "Employee Discount",
+      "discount_type": "percentage",
+      "discount_value": 20,
+      "min_amount": 100,
+      "max_discount": 200,
+      "valid_from": "2025-01-01T00:00:00.000Z",
+      "valid_to": "2025-12-31T23:59:59.000Z",
+      "is_active": false,
+      "created_at": "2024-12-01T00:00:00.000Z"
+    }
+  ],
+  "shows": [
+    {
+      "id": 1,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-20T10:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-20T14:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-20T18:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-20T22:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-20T10:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-20T14:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-20T18:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-20T22:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "movie_id": "M003",
+      "screen_id": "S003",
+      "show_datetime": "2025-07-20T10:00:00.000Z",
+      "normal_price": 180,
+      "premium_price": 300,
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "movie_id": "M003",
+      "screen_id": "S003",
+      "show_datetime": "2025-07-20T14:00:00.000Z",
+      "normal_price": 180,
+      "premium_price": 300,
+      "is_active": true
+    },
+    {
+      "id": 11,
+      "movie_id": "M003",
+      "screen_id": "S003",
+      "show_datetime": "2025-07-20T18:00:00.000Z",
+      "normal_price": 180,
+      "premium_price": 300,
+      "is_active": true
+    },
+    {
+      "id": 12,
+      "movie_id": "M003",
+      "screen_id": "S003",
+      "show_datetime": "2025-07-20T22:00:00.000Z",
+      "normal_price": 180,
+      "premium_price": 300,
+      "is_active": true
+    },
+    {
+      "id": 13,
+      "movie_id": "M004",
+      "screen_id": "S004",
+      "show_datetime": "2025-07-20T10:00:00.000Z",
+      "normal_price": 200,
+      "premium_price": 350,
+      "is_active": true
+    },
+    {
+      "id": 14,
+      "movie_id": "M004",
+      "screen_id": "S004",
+      "show_datetime": "2025-07-20T14:00:00.000Z",
+      "normal_price": 200,
+      "premium_price": 350,
+      "is_active": true
+    },
+    {
+      "id": 15,
+      "movie_id": "M004",
+      "screen_id": "S004",
+      "show_datetime": "2025-07-20T18:00:00.000Z",
+      "normal_price": 200,
+      "premium_price": 350,
+      "is_active": true
+    },
+    {
+      "id": 16,
+      "movie_id": "M004",
+      "screen_id": "S004",
+      "show_datetime": "2025-07-20T22:00:00.000Z",
+      "normal_price": 200,
+      "premium_price": 350,
+      "is_active": true
+    },
+    {
+      "id": 17,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-21T10:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 18,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-21T14:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 19,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-21T18:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 20,
+      "movie_id": "M001",
+      "screen_id": "S001",
+      "show_datetime": "2025-07-21T22:00:00.000Z",
+      "normal_price": 150,
+      "premium_price": 250,
+      "is_active": true
+    },
+    {
+      "id": 21,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-21T10:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 22,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-21T14:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 23,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-21T18:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    },
+    {
+      "id": 24,
+      "movie_id": "M002",
+      "screen_id": "S002",
+      "show_datetime": "2025-07-21T22:00:00.000Z",
+      "normal_price": 160,
+      "premium_price": 260,
+      "is_active": true
+    }
+  ],
+  "snack_items": [
+    {
+      "id": "SN001",
+      "name": "Popcorn (Large)",
+      "description": "Large tub of butter popcorn",
+      "price": 200,
+      "is_active": true
+    },
+    {
+      "id": "SN002",
+      "name": "Coca-Cola (500ml)",
+      "description": "Chilled 500ml Coca-Cola bottle",
+      "price": 80,
+      "is_active": true
+    },
+    {
+      "id": "SN003",
+      "name": "Nachos with Cheese",
+      "description": "Crispy nachos with a generous serving of cheese sauce",
+      "price": 250,
+      "is_active": true
+    },
+    {
+      "id": "SN004",
+      "name": "Hot Dog",
+      "description": "Classic hot dog with mustard and ketchup",
+      "price": 180,
+      "is_active": true
+    },
+    {
+      "id": "SN005",
+      "name": "Pepsi (Regular)",
+      "description": "Regular sized Pepsi",
+      "price": 60,
+      "is_active": true
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "show_id": 1,
+      "seats_booked": [
+        { "seat_number": "A1", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "A2", "seat_type": "normal", "price_at_booking": 150 }
+      ],
+      "base_amount": 300,
+      "snacks_items": [
+        { "name": "Popcorn (Large)", "quantity": 1, "price_per_item": 200, "total_price": 200 }
+      ],
+      "parking_charges": 50,
+      "convenience_fee": 40,
+      "discount_applied": 0,
+      "final_amount": 590,
+      "status": "confirmed",
+      "created_at": "2025-07-19T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "show_id": 3,
+      "seats_booked": [
+        { "seat_number": "B5", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "B6", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "K1", "seat_type": "premium", "price_at_booking": 250 }
+      ],
+      "base_amount": 550,
+      "snacks_items": [
+        { "name": "Coca-Cola (500ml)", "quantity": 2, "price_per_item": 80, "total_price": 160 }
+      ],
+      "parking_charges": 0,
+      "convenience_fee": 60,
+      "discount_applied": 50,
+      "final_amount": 720,
+      "status": "confirmed",
+      "created_at": "2025-07-19T10:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "show_id": 2,
+      "seats_booked": [
+        { "seat_number": "D10", "seat_type": "normal", "price_at_booking": 150 }
+      ],
+      "base_amount": 150,
+      "snacks_items": [],
+      "parking_charges": 50,
+      "convenience_fee": 30,
+      "discount_applied": 0,
+      "final_amount": 230,
+      "status": "confirmed",
+      "created_at": "2025-07-19T11:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "user_id": 4,
+      "show_id": 4,
+      "seats_booked": [
+        { "seat_number": "F1", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "F2", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "F3", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "F4", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "F5", "seat_type": "normal", "price_at_booking": 150 },
+        { "seat_number": "F6", "seat_type": "normal", "price_at_booking": 150 }
+      ],
+      "base_amount": 900,
+      "snacks_items": [
+        { "name": "Popcorn (Large)", "quantity": 2, "price_per_item": 200, "total_price": 400 },
+        { "name": "Coca-Cola (500ml)", "quantity": 2, "price_per_item": 80, "total_price": 160 }
+      ],
+      "parking_charges": 50,
+      "convenience_fee": 80,
+      "discount_applied": 100,
+      "final_amount": 1490,
+      "status": "confirmed",
+      "created_at": "2025-07-19T12:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "user_id": 5,
+      "show_id": 5,
+      "seats_booked": [
+        { "seat_number": "K1", "seat_type": "premium", "price_at_booking": 260 },
+        { "seat_number": "K2", "seat_type": "premium", "price_at_booking": 260 }
+      ],
+      "base_amount": 520,
+      "snacks_items": [],
+      "parking_charges": 0,
+      "convenience_fee": 50,
+      "discount_applied": 0,
+      "final_amount": 570,
+      "status": "confirmed",
+      "created_at": "2025-07-19T14:00:00.000Z"
+    }
+  ],
+  "booking_offers": [
+    {
+      "id": 1,
+      "booking_id": 2,
+      "offer_id": 3,
+      "discount_amount": 50,
+      "created_at": "2025-07-19T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "booking_id": 4,
+      "offer_id": 1,
+      "discount_amount": 100,
+      "created_at": "2025-07-19T12:30:00.000Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "booking_id": 1,
+      "original_amount": 590,
+      "final_amount": 590,
+      "payment_method": "UPI",
+      "receipt_number": "PAY001",
+      "status": "paid",
+      "transaction_id": "TXN12345",
+      "created_at": "2025-07-19T09:01:00.000Z"
+    },
+    {
+      "id": 2,
+      "booking_id": 2,
+      "original_amount": 720,
+      "final_amount": 720,
+      "payment_method": "Credit Card",
+      "receipt_number": "PAY002",
+      "status": "paid",
+      "transaction_id": "TXN67890",
+      "created_at": "2025-07-19T10:31:00.000Z"
+    },
+    {
+      "id": 3,
+      "booking_id": 3,
+      "original_amount": 230,
+      "final_amount": 230,
+      "payment_method": "Cash",
+      "receipt_number": "PAY003",
+      "status": "paid",
+      "transaction_id": null,
+      "created_at": "2025-07-19T11:01:00.000Z"
+    },
+    {
+      "id": 4,
+      "booking_id": 4,
+      "original_amount": 1490,
+      "final_amount": 1490,
+      "payment_method": "Debit Card",
+      "receipt_number": "PAY004",
+      "status": "paid",
+      "transaction_id": "TXN11223",
+      "created_at": "2025-07-19T12:31:00.000Z"
+    },
+    {
+      "id": 5,
+      "booking_id": 5,
+      "original_amount": 570,
+      "final_amount": 570,
+      "payment_method": "Net Banking",
+      "receipt_number": "PAY005",
+      "status": "paid",
+      "transaction_id": "TXN44556",
+      "created_at": "2025-07-19T14:01:00.000Z"
+    }
+  ],
+  "seat_operations": [
+    {
+      "id": 1,
+      "seat_id": "A1",
+      "admin_id": 1,
+      "action": "block",
+      "reason": "Maintenance",
+      "show_id": 1,
+      "created_at": "2025-07-19T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "seat_id": "A2",
+      "admin_id": 1,
+      "action": "block",
+      "reason": "Maintenance",
+      "show_id": 1,
+      "created_at": "2025-07-19T08:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "seat_id": "B3",
+      "admin_id": 1,
+      "action": "block",
+      "reason": "VIP Hold",
+      "show_id": 3,
+      "created_at": "2025-07-19T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "seat_id": "A1",
+      "admin_id": 1,
+      "action": "unblock",
+      "reason": "Maintenance completed",
+      "show_id": 1,
+      "created_at": "2025-07-19T12:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "seat_id": "G7",
+      "admin_id": 1,
+      "action": "block",
+      "reason": "Special event seating",
+      "show_id": 5,
+      "created_at": "2025-07-19T13:00:00.000Z"
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "title": "Grand Opening Offers",
+      "target_url": "/offers/grand-opening",
+      "image_url": "https://example.com/banner1.jpg",
+      "position": 1,
+      "is_active": true,
+      "start_date": "2025-07-01T00:00:00.000Z",
+      "end_date": "2025-07-31T23:59:59.000Z",
+      "created_by": 1,
+      "created_at": "2025-07-01T07:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "New Movie Alert: Kalki 2898 AD",
+      "target_url": "/movie/M005",
+      "image_url": "https://example.com/kalki_banner.jpg",
+      "position": 2,
+      "is_active": true,
+      "start_date": "2025-07-15T00:00:00.000Z",
+      "end_date": "2025-08-15T23:59:59.000Z",
+      "created_by": 1,
+      "created_at": "2025-07-14T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Weekend Special Popcorn",
+      "target_url": "/snacks",
+      "image_url": "https://example.com/popcorn_banner.jpg",
+      "position": 3,
+      "is_active": true,
+      "start_date": "2025-07-19T00:00:00.000Z",
+      "end_date": "2025-07-21T23:59:59.000Z",
+      "created_by": 1,
+      "created_at": "2025-07-18T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Book 5, Get 1 Free",
+      "target_url": "/offers/bulk-booking",
+      "image_url": "https://example.com/bulk_banner.jpg",
+      "position": 4,
+      "is_active": false,
+      "start_date": "2025-06-01T00:00:00.000Z",
+      "end_date": "2025-06-30T23:59:59.000Z",
+      "created_by": 1,
+      "created_at": "2025-05-25T11:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Summer Blockbusters",
+      "target_url": "/movies/summer",
+      "image_url": "https://example.com/summer_banner.jpg",
+      "position": 5,
+      "is_active": true,
+      "start_date": "2025-07-01T00:00:00.000Z",
+      "end_date": "2025-08-31T23:59:59.000Z",
+      "created_by": 1,
+      "created_at": "2025-06-20T14:00:00.000Z"
+    }
+  ],
+  "seat_templates": [
+    {
+      "id": "template_screen_1",
+      "screen_id": "S001",
+      "seats": [
+        {"seat_number": "A1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "A18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "B1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "B18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "C1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "C18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "D1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "D18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "E1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "E18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "F1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "F18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "G1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "G18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "H1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "H18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "I1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "I18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "J1", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J2", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J3", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J4", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J5", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J6", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J7", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J8", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J9", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J10", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J11", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J12", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J13", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J14", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J15", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J16", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J17", "seat_type": "normal", "price_multiplier": 1.0},
+        {"seat_number": "J18", "seat_type": "normal", "price_multiplier": 1.0},
+
+        {"seat_number": "K1", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K2", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K3", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K4", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K5", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K6", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K7", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K8", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K9", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K10", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K11", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K12", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K13", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K14", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K15", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K16", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K17", "seat_type": "premium", "price_multiplier": 1.5},
+        {"seat_number": "K18", "seat_type": "premium", "price_multiplier": 1.5}
+      ]
+    }
+  ]
+}

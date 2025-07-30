@@ -1,0 +1,99 @@
+<nav class="bg-white shadow-sm border-b fixed top-0 left-0 w-full z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center space-x-2">
+        <a routerLink="/">
+          <img src="IMAGES/GrabASeat_Logo_FInal_Bgremover.png" alt="GrabASeat Logo" class="h-10 w-auto object-contain">
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a routerLink="/" 
+            routerLinkActive="bg-[#ede9fe] text-[#6d28d9] hover:text-purple-600" 
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="px-4 py-2 rounded-full text-sm font-medium hover:text-gray-900">
+            For You
+          </a>
+          
+          <a routerLink="/movies" 
+            routerLinkActive="bg-[#ede9fe] text-[#6d28d9] hover:text-purple-600" 
+            class="px-3 py-2 rounded-full text-sm font-medium hover:text-gray-900">
+            Movies
+          </a>
+          
+          <a routerLink="/offers" 
+            routerLinkActive="bg-[#ede9fe] text-[#6d28d9] hover:text-purple-600" 
+            class="px-3 py-2 rounded-full text-sm font-medium hover:text-gray-900">
+            Offers
+          </a>
+          
+          <a routerLink="/aboutus" 
+            routerLinkActive="bg-[#ede9fe] text-[#6d28d9] hover:text-purple-600" 
+            class="px-3 py-2 rounded-full text-sm font-medium hover:text-gray-900">
+            About Us
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <input 
+            type="text" 
+            [(ngModel)]="searchTerm" 
+            (input)="searchMovies()" 
+            placeholder="Search for movies..." 
+            class="w-80 px-4 py-2 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7c3aed] focus:border-transparent">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          
+          <div *ngIf="searchTerm.length > 0 && searchResults.length > 0" class="absolute z-10 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+            <div *ngFor="let movie of searchResults" 
+                 (click)="navigateToMovie(movie._id)" 
+                 class="flex items-center p-3 border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+              <img [src]="movie.poster" [alt]="movie.title" class="w-10 h-14 object-cover rounded-md mr-3">
+              <div>
+                <div class="font-medium text-gray-900">{{ movie.title }}</div>
+                <div class="text-sm text-gray-500">{{ movie.language }} • {{ movie.duration }}</div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="searchTerm.length > 0 && searchResults.length === 0" class="absolute z-10 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-3 text-center text-gray-500">
+            No movies found.
+          </div>
+        </div>
+        
+        <app-profile-dropdown (openLogin)="openLoginModal()"></app-profile-dropdown>
+        <div 
+          *ngIf="showLoginModal" 
+          class="fixed inset-0 w-full backdrop-blur-sm z-40">
+        </div>
+        <div 
+          *ngIf="showLoginModal" 
+          class="fixed inset-0 z-50 flex items-center justify-center">
+          <app-login (close)="closeLoginModal()"></app-login>
+        </div>
+      </div>
+
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+      <a routerLink="/" class="bg-[#ede9fe] text-[#6d28d9] block px-3 py-2 rounded-md text-base font-medium">For You</a>
+      <a routerLink="/movies" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Movies</a>
+      <a routerLink="/offers" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Offers</a>
+      <a routerLink="/aboutus" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+    </div>
+  </div>
+</nav>

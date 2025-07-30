@@ -1,0 +1,58 @@
+<div class="bg-gray-100 min-h-screen">
+  <div class="max-w-2xl mx-auto p-4 md:p-6">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden mt-35">
+      <div class="bg-purple-600 text-white p-6 text-center ">
+        <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <h1 class="text-2xl font-bold">Booking Confirmed!</h1>
+        <p class="mt-2">Your tickets have been booked successfully</p>
+      </div>
+      
+      <div class="p-6">
+        <div *ngIf="booking">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm text-gray-500">Movie</p>
+              <p class="font-medium">{{ booking.movie }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Theater</p>
+              <p class="font-medium">{{ booking.cinema }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Showtime</p>
+              <p class="font-medium">{{ booking.time }}, {{ getFormattedDate(booking.date) }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Seats</p>
+              <p class="font-medium">{{ booking.seats.join(', ') }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Booking ID</p>
+              <p class="font-medium">{{ booking.id }}</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Amount Paid</p>
+              <p class="font-medium">₹{{ booking.total }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- <div class="mt-6 text-center">
+          <img [src]="booking?.qrCode" alt="QR Code" class="mx-auto h-48 w-48 mb-4">
+          <p class="text-sm text-gray-500">Show this QR code at the theater entrance</p>
+        </div> -->
+        
+        <div class="mt-8 flex justify-center space-x-4">
+          <a routerLink="/bookings" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg">
+            View All Bookings
+          </a>
+          <a routerLink="/movies" class="px-6 py-2 border border-purple-600 text-purple-600 hover:bg-purple-50 rounded-lg">
+            Book More Tickets
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
